@@ -2,12 +2,14 @@ configuration T1AppC
 {
 }
 
+
 implementation
 {
-  components MainC, T1C, LedsC;
+	components MainC, T1C, LedsC, UserButtonC;
 
   T1C -> MainC.Boot;
   T1C.Leds -> LedsC;
+	T1C.Button -> UserButtonC;
 
   components new TimerMilliC() as TimerAccel;
   T1C.TimerAccel -> TimerAccel;
@@ -17,7 +19,4 @@ implementation
   T1C.Yaxis -> ADXL345C.Y;
   T1C.Zaxis -> ADXL345C.Z;
   T1C.AccelControl -> ADXL345C.SplitControl;
-
-  components UserButtonC;
-  T1C.Button -> UserButtonC;
 }
