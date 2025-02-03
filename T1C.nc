@@ -35,6 +35,7 @@ implementation
         printfz1_init();
         x = 0;
         y = 0;
+        z = 0;
         printfz1("-----Accelerometer Started-----\n");
     }
 
