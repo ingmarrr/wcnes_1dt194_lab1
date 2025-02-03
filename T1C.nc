@@ -22,7 +22,7 @@ module T1C @safe()
 implementation
 {
     uint16_t error = 100; //Set the error value
-    uint16_t x, y;
+    uint16_t x, y, z;
 
     event void Boot.booted() 
     {
@@ -92,6 +92,7 @@ implementation
         {
         	call Leds.led2Off(); //If difference is less than the error turn the LED off.
         }
+        z = data;
     }
 
     event void Button.notify(button_state_t val) 
